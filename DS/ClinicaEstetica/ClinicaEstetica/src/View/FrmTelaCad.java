@@ -173,7 +173,7 @@ public class FrmTelaCad extends JFrame{
                 tnome.setText("");
                 cpf.setText("");
                 data.setText("");
-                tcodigo.requestFocus();
+                tnome.requestFocus();
             }
         });
         grav.addActionListener(new ActionListener() {
@@ -190,6 +190,7 @@ public class FrmTelaCad extends JFrame{
         alt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                cliente.setID_Cliente(Integer.parseInt(tcodigo.getText()));
                 cliente.setNome(tnome.getText());
                 cliente.setCPF(cpf.getText());
                 cliente.setData(data.getText());
@@ -202,6 +203,7 @@ public class FrmTelaCad extends JFrame{
         exc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                cliente.setID_Cliente(Integer.parseInt(tcodigo.getText()));
                 cliente.setNome(tnome.getText());
                 cliente.setCPF(cpf.getText());
                 cliente.setData(data.getText());
