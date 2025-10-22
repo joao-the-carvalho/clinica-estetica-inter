@@ -1,0 +1,98 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.fundo{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../../img/escola.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 40%;
+}
+main{
+    margin-top: 5vh;
+}
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2vw;
+}
+table{
+    box-shadow: 0 0 5px black;
+    margin: auto;
+    width: 80vw;
+    border-collapse: collapse;
+    font-size: 1.5vw;
+    opacity: 80%;
+    color: rgb(220, 234, 247);
+    margin-bottom: 4vh;
+}
+th{
+    width: 20%;
+}
+td{
+    padding-left: 3%;
+}
+tr{
+    height: 7vh;
+}
+.cap{
+    background-color: rgb(110, 89, 17);
+}
+.par{
+    background-color: rgb(134, 128, 43);
+}
+.impar{
+    background-color: rgb(175, 167, 56);
+}
+form{
+    position: fixed;
+    bottom: 0.5vh;
+    right: 0.5vw;
+    height: 5vh;
+    width: 5vw;
+}
+input{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(187, 174, 58);
+    color: rgb(220, 234, 247);
+    font-weight: bold;
+    font-size: 1vw;
+}
+input:hover{
+    background-color: rgb(197, 184, 68);
+    cursor: pointer;
+}
+
+@media(max-width: 100vh){
+    p, table{
+        font-size: 120%;
+    }
+    form{
+        top: 3vh;
+        width: 15vw;
+    }
+    input{
+        font-size: 3vw;
+    }
+    body{
+        overflow-x: visible;
+    }
+}
+@media(max-width: 1000px){
+    form{
+        bottom: 5vh;
+    }
+    input{
+        border-width: 1px;
+    }
+}

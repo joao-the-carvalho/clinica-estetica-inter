@@ -1,0 +1,98 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.fundo{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../img/clientesfundo.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 40%;
+}
+main{
+    margin-top: 5vh;
+}
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2vw;
+}
+table{
+    box-shadow: 0 0 5px black;
+    margin: auto;
+    width: 80vw;
+    border-collapse: collapse;
+    font-size: 1.5vw;
+    opacity: 80%;
+    color: rgb(0, 0, 0);
+    margin-bottom: 4vh;
+}
+th{
+    width: 25%;
+}
+td{
+    padding-left: 3%;
+}
+tr{
+    height: 7vh;
+}
+.cap{
+    background-color: #667f48;
+}
+.par{
+    background-color: rgb(228, 231, 216);
+}
+.impar{
+    background-color: #abb194;
+}
+form{
+    position: fixed;
+    bottom: 0.5vh;
+    right: 0.5vw;
+    height: 5vh;
+    width: 5vw;
+}
+input{
+    height: 100%;
+    width: 100%;
+    background-color: #abb194;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1vw;
+}
+input:hover{
+    background-color: rgb(228, 231, 216);
+    cursor: pointer;
+}
+
+@media(max-width: 100vh){
+    p, table{
+        font-size: 120%;
+    }
+    form{
+        top: 3vh;
+        width: 15vw;
+    }
+    input{
+        font-size: 3vw;
+    }
+    body{
+        overflow-x: visible;
+    }
+}
+@media(max-width: 1000px){
+    form{
+        bottom: 5vh;
+    }
+    input{
+        border-width: 1px;
+    }
+}
