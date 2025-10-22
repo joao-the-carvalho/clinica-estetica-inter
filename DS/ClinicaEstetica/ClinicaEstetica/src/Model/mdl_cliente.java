@@ -76,9 +76,9 @@ public class mdl_cliente {
     
     public void alterar(FrmTelaCad form, Conexao con_bco){
          try {
-             String sql;
+                String sql;
                 String msg="";
-                if(form.tcodigo.getText().equals("")){
+                if (Integer.toString(getID_Cliente()).equals("")){
                     sql="INSERT INTO `cliente` ( `Nome`, `CPF`, `Data_nascimento`) VALUES('"+getNome()+"', '"+getCPF()+"', '"+getData()+"');"; 
                     msg="Gravação de um novo registro";
                 }
@@ -89,7 +89,6 @@ public class mdl_cliente {
                 JOptionPane.showMessageDialog(null,"Alteração realizada com sucesso!!","Mensagem do programa",JOptionPane.INFORMATION_MESSAGE);
 
                 con_bco.executaSQL("select * from cliente order by ID_Cliente");
-                form.preencherTabela();
             }catch(SQLException errosql){
                 JOptionPane.showMessageDialog(null,"\nErro na gravação : \n" +errosql,"Mensagem do programa",JOptionPane.INFORMATION_MESSAGE);
             }

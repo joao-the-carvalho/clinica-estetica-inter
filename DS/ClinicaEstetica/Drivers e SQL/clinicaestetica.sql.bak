@@ -183,6 +183,7 @@ CREATE TABLE `tblusuario` (
 --
 
 INSERT INTO `tblusuario` (`usuario`, `senha`) VALUES
+('A', '123'),
 ('A', '123');
 
 -- --------------------------------------------------------
