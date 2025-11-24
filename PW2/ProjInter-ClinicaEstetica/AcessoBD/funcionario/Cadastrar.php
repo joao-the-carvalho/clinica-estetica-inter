@@ -8,19 +8,17 @@
 </head>
 <body>
     <?php
-        include_once '../cursos/Cursos.php';
-        $p = new Cursos();
+        include_once 'Funcao.php';
+        $p = new Funcao();
         $pro_bd=$p->listar();
     ?>
         <form name="cliente" method="POST" action="" class="form">
-            <h1>Dados do Aluno:</h1>
+            <h1>Dados do Funcionario:</h1>
             <div class="txts">
-                Matrícula: <br><input name="txtmat" type="text" maxlength="5" maxlength="5" placeholder="00000" class="txt" required><br>
-                Nome: <br><input name="txtnome" type="text" placeholder="Aluno" class="txt" required><br>
-                Endereço: <br><input name="txtend" type="text" placeholder="Rua, Número" class="txt" required><br>
-                Cidade: <br><input name="txtcid" type="text" placeholder="Cidade" class="txt" required><br>
-                Disciplinas:<br>
-                <select name="selcodcurso" required>
+                Nome do Funcionario: <br><input name="txtNome" type="text" placeholder="Nome" class="txt" required><br>
+                CPF do Funcionario: <br><input name="txtCPF" type="text" id="cpf" placeholder="000.000.000-00" class="txt" maxlength="14" minlength="14" required><br>
+                Função:<br>
+                <select name="selIdfunc" required>
                     <option value="" selected></option>
                     <?php
                         foreach($pro_bd as $pro_mostrar)
@@ -28,7 +26,7 @@
                             echo "<option value='$pro_mostrar[0]'>$pro_mostrar[1]</option>";
                         }
                     ?>
-                </select> 
+                </select>
             </div>
             
             <div class="btns">
@@ -40,18 +38,22 @@
                 extract($_POST, EXTR_OVERWRITE);
                 if(isset($btnenviar))
                 {
-                    include_once 'Alunos.php';
-                    $pro=new Alunos();
-                    $pro->setMatricula($txtmat);
-                    $pro->setNome($txtnome);
-                    $pro->setEndereco($txtend);
-                    $pro->setCidade($txtcid);
-                    $pro->setCodcurso($selcodcurso);
+                    include_once 'Funcionario.php';
+                    $pro=new Funcionario();
+                    $pro->setNome($txtNome);
+                    $pro->setCPF($txtCPF);
+                    $pro->setIdfunc($selIdfunc);
                     echo "<p class='msg'>" . $pro->salvar() . "</p>";
                 }
             ?>
         </form>
     
     <div class="fundo"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+        
+    <script type="text/javascript">
+        $("#cpf").mask("000.000.000-00");
+    </script>
 </body>
 </html>

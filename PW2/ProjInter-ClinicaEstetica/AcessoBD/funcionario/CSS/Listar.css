@@ -11,7 +11,7 @@ body{
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('../../../../img/escola.jpg');
+    background-image: url('../../../img/clientesfundo.jpeg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: -1;
@@ -32,11 +32,11 @@ table{
     border-collapse: collapse;
     font-size: 1.5vw;
     opacity: 80%;
-    color: rgb(220, 234, 247);
+    color: rgb(0, 0, 0);
     margin-bottom: 4vh;
 }
 th{
-    width: 20%;
+    width: 25%;
 }
 td{
     padding-left: 3%;
@@ -45,13 +45,13 @@ tr{
     height: 7vh;
 }
 .cap{
-    background-color: rgb(110, 89, 17);
+    background-color: #667f48;
 }
 .par{
-    background-color: rgb(134, 128, 43);
+    background-color: rgb(228, 231, 216);
 }
 .impar{
-    background-color: rgb(175, 167, 56);
+    background-color: #abb194;
 }
 form{
     position: fixed;
@@ -63,13 +63,13 @@ form{
 input{
     height: 100%;
     width: 100%;
-    background-color: rgb(187, 174, 58);
-    color: rgb(220, 234, 247);
+    background-color: #abb194;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 1vw;
 }
 input:hover{
-    background-color: rgb(197, 184, 68);
+    background-color: rgb(228, 231, 216);
     cursor: pointer;
 }
 

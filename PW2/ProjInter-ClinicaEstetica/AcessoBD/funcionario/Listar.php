@@ -10,18 +10,17 @@
     <main>
         <?php
             $pos = 0;
-            include_once 'Alunos.php';
-            $p = new Alunos();
+            include_once 'Funcionario.php';
+            $p = new Funcionario();
             $pro_bd=$p->listar();
         ?>
-        <p>Lista da tabela 'alunos'<p>
+        <p>Lista da tabela 'funcionario'<p>
         <table>
             <tr class="cap">
-                <th>Id</th>
+                <th>ID_Funcionario</th>
                 <th>Nome</th>
-                <th>Endereço</th>
-                <th>Cidade</th>
-                <th>CodCurso</th>
+                <th>CPF</th>
+                <th>ID_Funcao</th>
             </tr>
         <?php
             foreach($pro_bd as $pro_mostrar)
@@ -38,7 +37,6 @@
                 echo "<td> $pro_mostrar[1] </td>"; 
                 echo "<td> $pro_mostrar[2] </td>";
                 echo "<td> $pro_mostrar[3] </td>"; 
-                echo "<td> $pro_mostrar[4] </td>"; 
                 echo "</tr>";
             }
         ?>

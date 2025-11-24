@@ -1,22 +1,21 @@
 <?php
     include_once '../Conectar.php';
 
-    class Alunos
+    class Funcionario
     {
-        private $matricula;
+        private $id;
         private $nome;
-        private $endereco;
-        private $cidade;
-        private $codcurso;
+        private $CPF;
+        private $idfunc;
         private $conn;
         
 
-        public function getMatricula() {
-            return $this->matricula;
+        public function getId() {
+            return $this->id;
         }
 
-        public function setMatricula($matricula1) {
-            $this->matricula = $matricula1;
+        public function setId($id1) {
+            $this->id = $id1;
         }
 
         public function getNome() {
@@ -27,28 +26,20 @@
             $this->nome = $name;
         }
 
-        public function getEndereco() {
-            return $this->endereco;
+        public function getCPF() {
+            return $this->CPF;
         }
 
-        public function setEndereco($endereco1) {
-            $this->endereco = $endereco1;
+        public function setCPF($CPF1) {
+            $this->CPF = $CPF1;
         }
 
-        public function getCidade() {
-            return $this->cidade;
+        public function getIdfunc() {
+            return $this->idfunc;
         }
 
-        public function setCidade($cidade1) {
-            $this->cidade = $cidade1;
-        }
-
-        public function getCodcurso() {
-            return $this->codcurso;
-        }
-
-        public function setCodcurso($codcurso1) {
-            $this->codcurso = $codcurso1;
+        public function setIdfunc($idfuncao) {
+            $this->idfunc = $idfuncao;
         }
 
         function listar()
@@ -56,7 +47,7 @@
             try
             {
                 $this->conn = new Conectar();
-                $sql = $this->conn->query("select * from alunos order by matricula");
+                $sql = $this->conn->query("select * from funcionario order by ID_Funcionario");
                 $sql->execute();
                 return $sql->fetchAll();
                 $this->conn = null;
@@ -72,12 +63,10 @@
             try
             {
                 $this-> conn = new Conectar();
-                $sql = $this->conn->prepare("insert into alunos values (?, ?, ?, ?, ?)");
-                @$sql-> bindParam(1, $this->getMatricula(), PDO::PARAM_STR);
-                @$sql-> bindParam(2, $this->getNome(), PDO::PARAM_STR);
-                @$sql-> bindParam(3, $this->getEndereco(), PDO::PARAM_STR);
-                @$sql-> bindParam(4, $this->getCidade(), PDO::PARAM_STR);
-                @$sql-> bindParam(5, $this->getCodcurso(), PDO::PARAM_STR);
+                $sql = $this->conn->prepare("insert into funcionario values (null, ?, ?, ?)");
+                @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+                @$sql-> bindParam(2, $this->getCPF(), PDO::PARAM_STR);
+                @$sql-> bindParam(3, $this->getIdfunc(), PDO::PARAM_STR);
                 if($sql->execute() == 1)
                 {
                     return "Registro salvo com sucesso!";
@@ -106,8 +95,8 @@
         function exclusao(){
             try{
                 $this-> conn = new Conectar();
-                $sql = $this->conn->prepare("delete from alunos where matricula = ?");
-                @$sql-> bindParam(1, $this->getMatricula(), PDO::PARAM_STR);
+                $sql = $this->conn->prepare("delete from funcionario where Id_Funcionario = ?");
+                @$sql-> bindParam(1, $this->getId(), PDO::PARAM_STR);
                 if($sql->execute() == 1){
                     return "Excluido com sucesso!";
                 }

@@ -11,7 +11,7 @@
     <form name="cliente" method="POST" action="" class="form">
         <h1>Exclusão de Alunos Cadastrados</h1>
         <div class="txts">
-        ID: <br><input name="txtid" type="text" maxlength="5" minlength="5" placeholder="00000">
+        ID: <br><input name="idfunc" type="text" maxlength="5" minlength="1" placeholder="0">
     </div>
         <div class="btns">
             <input name="btnenviar" type="submit" value="Excluir">
@@ -22,9 +22,9 @@
         <?php
             extract($_POST, EXTR_OVERWRITE);
             if(isset($btnenviar)){
-                include_once 'Alunos.php';
-                $p = new Alunos();
-                $p->setMatricula($txtid);
+                include_once 'Funcionario.php';
+                $p = new Funcionario();
+                $p->setId($idfunc);
                 echo "<p class='msg'>" . $p->exclusao() . "</p>";
             }
         ?>

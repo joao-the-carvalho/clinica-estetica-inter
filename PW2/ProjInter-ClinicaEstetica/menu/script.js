@@ -15,7 +15,7 @@ function cadastrar(){
         setTimeout(function(){
             tit.textContent = "Cadastrar";
             dis.href = "../AcessoBD/cliente/Cadastrar.php";
-            cur.href = "../AcessoBD/cursos/Cadastrar.php";
+            cur.href = "../AcessoBD/funcionario/Cadastrar.php";
             alu.href = "../AcessoBD/alunos/Cadastrar.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
@@ -35,8 +35,8 @@ function excluir(){
         setTimeout(function(){
             tit.textContent = "Excluir";
             dis.href = "../AcessoBD/cliente/Excluir.php";
-            cur.href = "../AcessoBD/cursos/Excluir.php";
-            alu.href = "../AcessoBD/alunos/Excluir.php";
+            cur.href = "../AcessoBD/funcionario/Excluir.php";
+            alu.href = "../AcessoBD/servicos/Excluir.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
         }, 500);
@@ -75,8 +75,8 @@ function listar(){
         setTimeout(function(){
             tit.textContent = "Listar";
             dis.href = "../AcessoBD/cliente/Listar.php";
-            cur.href = "../AcessoBD/cursos/Listar.php";
-            alu.href = "../AcessoBD/alunos/Listar.php";
+            cur.href = "../AcessoBD/funcionario/Listar.php";
+            alu.href = "../AcessoBD/funcionario/Listar.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
         }, 500);
