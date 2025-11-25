@@ -8,10 +8,10 @@
 </head>
 <body>    
     <form name="cliente" method="POST" action="" class="form">
-        <h1>Consulta de Alunos Cadastrados</h1>
+        <h1>Consulta de Funcionários Cadastrados</h1>
         <div class="txts">
             Nome:<br>
-            <input name="txtnome" type="text" size="40" maxlength="40" placeholder="Nome do Aluno">
+            <input name="txtnome" type="text" size="40" maxlength="100" placeholder="Nome do Funcionário">
         </div>
         <div class="btns">
             <input name="btnenviar" type="submit" value="Consultar"><br>
@@ -22,18 +22,17 @@
     <br>
     <table>
         <tr class="cap">
-            <th>Id</th>
+            <th>ID_Funcionario</th>
             <th>Nome</th>
-            <th>Endereço</th>
-            <th>Cidade</th>
-            <th>CodCurso</th>
+            <th>CPF</th>
+            <th>ID_funcao</th>
         </tr>
         <?php
             extract($_POST, EXTR_OVERWRITE);
             if(isset($btnenviar)){
                 $pos = 0;
-                include_once 'Alunos.php';
-                $p = new Alunos();
+                include_once 'Funcionario.php';
+                $p = new Funcionario();
                 $p->setNome($txtnome.'%');
                 $pro_bd=$p->consultar();
                 foreach($pro_bd as $pro_mostrar){
@@ -49,7 +48,6 @@
                     echo "<td> $pro_mostrar[1] </td>"; 
                     echo "<td> $pro_mostrar[2] </td>"; 
                     echo "<td> $pro_mostrar[3] </td>"; 
-                    echo "<td> $pro_mostrar[4] </td>"; 
                     echo "</tr>";
                 }
             }

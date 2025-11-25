@@ -55,7 +55,7 @@ function pesquisar(){
         setTimeout(function(){
             tit.textContent = "Pesquisar";
             dis.href = "../AcessoBD/cliente/Pesquisar.php";
-            cur.href = "../AcessoBD/cursos/Pesquisar.php";
+            cur.href = "../AcessoBD/funcionario/Pesquisar.php";
             alu.href = "../AcessoBD/alunos/Pesquisar.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
@@ -95,7 +95,7 @@ function alterar(){
         setTimeout(function(){
             tit.textContent = "Alterar";
             dis.href = "../AcessoBD/cliente/Alterar.php";
-            cur.href = "../../Aviso/index.htm";
+            cur.href = "../AcessoBD/funcionario/Alterar.php";
             alu.href = "../../Aviso/index.htm";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");

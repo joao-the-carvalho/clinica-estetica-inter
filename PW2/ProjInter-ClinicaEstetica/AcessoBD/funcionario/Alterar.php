@@ -9,9 +9,9 @@
 <body>
     
     <form name="cliente" method="POST" action="Alterar2.php" class="form">
-        <h1>Alteração de Clientes Cadastrados</h1>
+        <h1>Alteração de Funcionários Cadastrados</h1>
         <div class="txts">
-        ID: <br><input name="txtcod" type="text" placeholder="Id do Cliente">
+        ID: <br><input name="txtcod" type="text" placeholder="Id do Funcionário">
     </div>
         <div class="btns">
             <input name="btnenviar" type="submit" value="Consultar">

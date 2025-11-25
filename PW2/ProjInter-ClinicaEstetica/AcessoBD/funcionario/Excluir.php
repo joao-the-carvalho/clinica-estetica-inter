@@ -9,9 +9,9 @@
 <body>
     
     <form name="cliente" method="POST" action="" class="form">
-        <h1>Exclusão de Alunos Cadastrados</h1>
+        <h1>Exclusão de Funcionários Cadastrados</h1>
         <div class="txts">
-        ID: <br><input name="idfunc" type="text" maxlength="5" minlength="1" placeholder="0">
+        ID: <br><input name="idfunc" type="text" minlength="1" placeholder="ID do Funcionário">
     </div>
         <div class="btns">
             <input name="btnenviar" type="submit" value="Excluir">

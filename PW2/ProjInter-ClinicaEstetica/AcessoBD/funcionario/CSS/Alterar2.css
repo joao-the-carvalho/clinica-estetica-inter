@@ -23,19 +23,19 @@ body{
 }
 h1{
     margin-top: 10%;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
     font-size: 40pt;
     text-align: center;
 }
 .txts{
     margin-left: 10%;   
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     font-size: 20pt;
 }
 .txts input{
     width: 80%;
     height: 40px;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     padding-left: 2%;
     border-radius: 5pt;
     border-color: #667f48;
@@ -45,6 +45,15 @@ h1{
     font-size: 18pt;
     text-shadow: #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px,
              #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px;
+}
+.txts select{
+    background-color: rgb(228, 231, 216);
+    border-color: #667f48;
+    width: 30%;
+    height: 30px;
+}
+.txts select:hover{
+    cursor: pointer;
 }
 .btns{
     width: 100%;
@@ -75,6 +84,8 @@ h1{
     position: fixed;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
     width: 100vw;
     height: 100vh;
     background-image: url('../../../img/clientesfundo.jpeg');
@@ -83,6 +94,7 @@ h1{
     z-index: -1;
     opacity: 40%;
 }
+
 .id{
     margin-left: 10%;
     margin-bottom: 4%;
