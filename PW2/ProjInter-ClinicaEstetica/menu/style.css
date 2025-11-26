@@ -22,7 +22,7 @@ header{
     height: 100%;
 }
 form{
-    width: 20%;
+    width: 16.67%;
     height: 100%;
     margin: auto;
 }
@@ -47,6 +47,10 @@ input:hover{
     background-color: #89aa61;
     text-shadow: #cf1919 0px 0px 4px,   #cf1919 0px 0px 4px,   #cf1919 0px 0px 4px,
              #cf1919 0px 0px 4px,   #cf1919 0px 0px 4px,   #cf1919 0px 0px 4px;
+}
+.sai{
+    text-shadow: #193acf 0px 0px 4px,   #193acf 0px 0px 4px,   #193acf 0px 0px 4px,
+             #193acf 0px 0px 4px,   #193acf 0px 0px 4px,   #193acf 0px 0px 4px;
 }
 main{
     height: 84vh;
