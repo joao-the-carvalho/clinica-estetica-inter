@@ -1,22 +1,23 @@
 <?php
     include_once '../Conectar.php';
 
-    class Cursos
+    class Servico
     {
-        private $codcurso;
+        private $idserv;
         private $nome;
-        private $coddisc1;
-        private $coddisc2;
-        private $coddisc3;
+        private $desc;
+        private $dura;
+        private $valor;
+        private $idsala;
         private $conn;
         
 
-        public function getCodcurso() {
-            return $this->codcurso;
+        public function getIdserv() {
+            return $this->idserv;
         }
 
-        public function setCodcurso($codcurso1) {
-            $this->codcurso = $codcurso1;
+        public function setIdserv($idserv1) {
+            $this->idserv = $idserv1;
         }
 
         public function getNome() {
@@ -27,28 +28,36 @@
             $this->nome = $name;
         }
 
-        public function getCoddisc1() {
-            return $this->coddisc1;
+        public function getDesc() {
+            return $this->desc;
         }
 
-        public function setCoddisc1($coddisc11) {
-            $this->coddisc1 = $coddisc11;
+        public function setDesc($desc1) {
+            $this->desc = $desc1;
         }
 
-        public function getCoddisc2() {
-            return $this->coddisc2;
+        public function getDura() {
+            return $this->dura;
         }
 
-        public function setCoddisc2($coddisc21) {
-            $this->coddisc2 = $coddisc21;
+        public function setDura($dura1) {
+            $this->dura = $dura1;
         }
 
-        public function getCoddisc3() {
-            return $this->coddisc3;
+        public function getValor() {
+            return $this->valor;
         }
 
-        public function setCoddisc3($coddisc31) {
-            $this->coddisc3 = $coddisc31;
+        public function setValor($valor1) {
+            $this->valor = $valor1;
+        }
+
+        public function getIdsala() {
+            return $this->idsala;
+        }
+
+        public function setIdsala($idsala1) {
+            $this->idsala = $idsala1;
         }
 
         function listar()
@@ -56,7 +65,7 @@
             try
             {
                 $this->conn = new Conectar();
-                $sql = $this->conn->query("select * from cursos order by codcurso");
+                $sql = $this->conn->query("select * from servico order by id_servico");
                 $sql->execute();
                 return $sql->fetchAll();
                 $this->conn = null;

@@ -10,18 +10,19 @@
     <main>
         <?php
             $pos = 0;
-            include_once 'Cursos.php';
-            $p = new Cursos();
+            include_once 'Servico.php';
+            $p = new Servico();
             $pro_bd=$p->listar();
         ?>
-        <p>Lista da tabela 'cursos'<p>
+        <p>Lista da tabela 'servico'<p>
         <table>
             <tr class="cap">
-                <th>CodCurso</th>
-                <th>Nome</th>
-                <th>CodDisc1</th>
-                <th>CodDisc2</th>
-                <th>CodDisc3</th>
+                <th>ID_Servico</th>
+                <th>Nome_servico</th>
+                <th>descricao</th>
+                <th>duracao</th>
+                <th>valor</th>
+                <th>ID_sala</th>
             </tr>
         <?php
             foreach($pro_bd as $pro_mostrar)
@@ -38,7 +39,8 @@
                 echo "<td> $pro_mostrar[1] </td>"; 
                 echo "<td> $pro_mostrar[2] </td>";
                 echo "<td> $pro_mostrar[3] </td>"; 
-                echo "<td> $pro_mostrar[4] </td>"; 
+                echo "<td> R$$pro_mostrar[4] </td>"; 
+                echo "<td> $pro_mostrar[5] </td>"; 
                 echo "</tr>";
             }
         ?>

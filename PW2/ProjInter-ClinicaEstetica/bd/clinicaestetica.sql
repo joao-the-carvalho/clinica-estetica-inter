@@ -3,16 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/10/2025 às 14:56
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Generation Time: Nov 26, 2025 at 03:50 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-create database clinicaestetica;
-use clinicaestetica;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -20,13 +18,16 @@ use clinicaestetica;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `clinicaestetica`
+-- Database: `clinicaestetica`
 --
+
+create database clinicaestetica;
+use clinicaestetica;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `agendamento`
+-- Table structure for table `agendamento`
 --
 
 CREATE TABLE `agendamento` (
@@ -43,7 +44,7 @@ CREATE TABLE `agendamento` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -53,10 +54,17 @@ CREATE TABLE `cliente` (
   `Data_nascimento` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cliente`
+--
+
+INSERT INTO `cliente` (`ID_Cliente`, `Nome`, `CPF`, `Data_nascimento`) VALUES
+(1, 'Vitoria Azevedo Correia', '345.672.896-87', '1984-11-01');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `email`
+-- Table structure for table `email`
 --
 
 CREATE TABLE `email` (
@@ -69,7 +77,7 @@ CREATE TABLE `email` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `endereco`
+-- Table structure for table `endereco`
 --
 
 CREATE TABLE `endereco` (
@@ -85,7 +93,7 @@ CREATE TABLE `endereco` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `formapagamento`
+-- Table structure for table `formapagamento`
 --
 
 CREATE TABLE `formapagamento` (
@@ -96,7 +104,7 @@ CREATE TABLE `formapagamento` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `funcao`
+-- Table structure for table `funcao`
 --
 
 CREATE TABLE `funcao` (
@@ -104,10 +112,19 @@ CREATE TABLE `funcao` (
   `Tipo` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `funcao`
+--
+
+INSERT INTO `funcao` (`ID_funcao`, `Tipo`) VALUES
+(1, 'atendente'),
+(2, 'esteticista'),
+(3, 'zelador');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `funcionario`
+-- Table structure for table `funcionario`
 --
 
 CREATE TABLE `funcionario` (
@@ -117,10 +134,20 @@ CREATE TABLE `funcionario` (
   `ID_funcao` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `funcionario`
+--
+
+INSERT INTO `funcionario` (`ID_Funcionario`, `Nome`, `CPF`, `ID_funcao`) VALUES
+(2, 'Marisa Cavalcanti Lima', '387.547.895-43', 1),
+(3, 'Tânia Pinto Alves', '474.841.792-49', 1),
+(4, 'Luiz Ferreira Rocha', '714.814.804-99', 2),
+(5, 'Clara Costa Souza', '874.878.891-89', 2);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pagamento`
+-- Table structure for table `pagamento`
 --
 
 CREATE TABLE `pagamento` (
@@ -133,7 +160,7 @@ CREATE TABLE `pagamento` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sala`
+-- Table structure for table `sala`
 --
 
 CREATE TABLE `sala` (
@@ -143,10 +170,17 @@ CREATE TABLE `sala` (
   `Num_unidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sala`
+--
+
+INSERT INTO `sala` (`ID_sala`, `Num_sala`, `Capacidade`, `Num_unidade`) VALUES
+(1, 110, 5, 1);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `servico`
+-- Table structure for table `servico`
 --
 
 CREATE TABLE `servico` (
@@ -158,10 +192,17 @@ CREATE TABLE `servico` (
   `ID_sala` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `servico`
+--
+
+INSERT INTO `servico` (`ID_servico`, `Nome_servico`, `descricao`, `duracao`, `valor`, `ID_sala`) VALUES
+(1, 'Botox', 'Injeção de Botox para uma pele mais lisa', '01:30:00', 99.99, 1);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tblusuario`
+-- Table structure for table `tblusuario`
 --
 
 CREATE TABLE `tblusuario` (
@@ -172,7 +213,7 @@ CREATE TABLE `tblusuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `telefone`
+-- Table structure for table `telefone`
 --
 
 CREATE TABLE `telefone` (
@@ -185,7 +226,7 @@ CREATE TABLE `telefone` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `unidade`
+-- Table structure for table `unidade`
 --
 
 CREATE TABLE `unidade` (
@@ -196,220 +237,231 @@ CREATE TABLE `unidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tabelas despejadas
+-- Dumping data for table `unidade`
+--
+
+INSERT INTO `unidade` (`Num_unidade`, `Nome`, `Endereco`, `Telefone`) VALUES
+(1, 'Unidade Vila Matilde', 'Rua Esperança', '(11) 93564-9145');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `agendamento`
+-- Indexes for table `agendamento`
 --
 ALTER TABLE `agendamento`
-  ADD PRIMARY KEY (`ID_agendamento`);
+  ADD PRIMARY KEY (`ID_agendamento`),
+  ADD KEY `fk_agendamento_cliente` (`ID_cliente`),
+  ADD KEY `fk_agendamento_funcionario` (`ID_Funcionario`),
+  ADD KEY `fk_agendamento_servico` (`ID_servico`),
+  ADD KEY `fk_agendamento_pagamento` (`ID_pagamento`);
 
 --
--- Índices de tabela `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`ID_Cliente`);
 
 --
--- Índices de tabela `email`
+-- Indexes for table `email`
 --
 ALTER TABLE `email`
-  ADD PRIMARY KEY (`ID_email`);
+  ADD PRIMARY KEY (`ID_email`),
+  ADD KEY `fk_email_funcionario` (`ID_dono`);
 
 --
--- Índices de tabela `endereco`
+-- Indexes for table `endereco`
 --
 ALTER TABLE `endereco`
-  ADD PRIMARY KEY (`ID_endereco`);
+  ADD PRIMARY KEY (`ID_endereco`),
+  ADD KEY `fk_endereco_cliente` (`ID_morador`);
 
 --
--- Índices de tabela `formapagamento`
+-- Indexes for table `formapagamento`
 --
 ALTER TABLE `formapagamento`
   ADD PRIMARY KEY (`ID_forma`);
 
 --
--- Índices de tabela `funcao`
+-- Indexes for table `funcao`
 --
 ALTER TABLE `funcao`
   ADD PRIMARY KEY (`ID_funcao`);
 
 --
--- Índices de tabela `funcionario`
+-- Indexes for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  ADD PRIMARY KEY (`ID_Funcionario`);
+  ADD PRIMARY KEY (`ID_Funcionario`),
+  ADD KEY `fk_funcionario_funcao` (`ID_funcao`);
 
 --
--- Índices de tabela `pagamento`
+-- Indexes for table `pagamento`
 --
 ALTER TABLE `pagamento`
-  ADD PRIMARY KEY (`ID_pagamento`);
+  ADD PRIMARY KEY (`ID_pagamento`),
+  ADD KEY `fk_pagamento_forma` (`Forma_pagamento`);
 
 --
--- Índices de tabela `sala`
+-- Indexes for table `sala`
 --
 ALTER TABLE `sala`
-  ADD PRIMARY KEY (`ID_sala`);
+  ADD PRIMARY KEY (`ID_sala`),
+  ADD KEY `fk_sala_unidade` (`Num_unidade`);
 
 --
--- Índices de tabela `servico`
+-- Indexes for table `servico`
 --
 ALTER TABLE `servico`
-  ADD PRIMARY KEY (`ID_servico`);
+  ADD PRIMARY KEY (`ID_servico`),
+  ADD KEY `fk_servico_sala` (`ID_sala`);
 
 --
--- Índices de tabela `telefone`
+-- Indexes for table `telefone`
 --
 ALTER TABLE `telefone`
-  ADD PRIMARY KEY (`ID_telefone`);
+  ADD PRIMARY KEY (`ID_telefone`),
+  ADD KEY `fk_telefone_cliente` (`ID_dono`);
 
 --
--- Índices de tabela `unidade`
+-- Indexes for table `unidade`
 --
 ALTER TABLE `unidade`
   ADD PRIMARY KEY (`Num_unidade`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `agendamento`
+-- AUTO_INCREMENT for table `agendamento`
 --
 ALTER TABLE `agendamento`
   MODIFY `ID_agendamento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `ID_Cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `email`
+-- AUTO_INCREMENT for table `email`
 --
 ALTER TABLE `email`
   MODIFY `ID_email` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `endereco`
+-- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
   MODIFY `ID_endereco` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `formapagamento`
+-- AUTO_INCREMENT for table `formapagamento`
 --
 ALTER TABLE `formapagamento`
   MODIFY `ID_forma` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `funcao`
+-- AUTO_INCREMENT for table `funcao`
 --
 ALTER TABLE `funcao`
-  MODIFY `ID_funcao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_funcao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de tabela `funcionario`
+-- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `ID_Funcionario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `pagamento`
+-- AUTO_INCREMENT for table `pagamento`
 --
 ALTER TABLE `pagamento`
   MODIFY `ID_pagamento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `sala`
+-- AUTO_INCREMENT for table `sala`
 --
 ALTER TABLE `sala`
-  MODIFY `ID_sala` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_sala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `servico`
+-- AUTO_INCREMENT for table `servico`
 --
 ALTER TABLE `servico`
-  MODIFY `ID_servico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_servico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `telefone`
+-- AUTO_INCREMENT for table `telefone`
 --
 ALTER TABLE `telefone`
   MODIFY `ID_telefone` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `unidade`
+-- AUTO_INCREMENT for table `unidade`
 --
 ALTER TABLE `unidade`
-  MODIFY `Num_unidade` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
+  MODIFY `Num_unidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+--
+-- Constraints for dumped tables
+--
 
--- cascade funciona pra, por exemplo, caso o cliente delete sua conta, o endereco, telefone e email colocados em conjunto ao registro do usuario sejam deletados tambem
+--
+-- Constraints for table `agendamento`
+--
+ALTER TABLE `agendamento`
+  ADD CONSTRAINT `fk_agendamento_cliente` FOREIGN KEY (`ID_cliente`) REFERENCES `cliente` (`ID_Cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_agendamento_funcionario` FOREIGN KEY (`ID_Funcionario`) REFERENCES `funcionario` (`ID_Funcionario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_agendamento_pagamento` FOREIGN KEY (`ID_pagamento`) REFERENCES `pagamento` (`ID_pagamento`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_agendamento_servico` FOREIGN KEY (`ID_servico`) REFERENCES `servico` (`ID_servico`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+--
+-- Constraints for table `email`
+--
+ALTER TABLE `email`
+  ADD CONSTRAINT `fk_email_cliente` FOREIGN KEY (`ID_dono`) REFERENCES `cliente` (`ID_Cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_email_funcionario` FOREIGN KEY (`ID_dono`) REFERENCES `funcionario` (`ID_Funcionario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `endereco`
+--
 ALTER TABLE `endereco`
-  ADD CONSTRAINT `fk_endereco_cliente`
-  FOREIGN KEY (`ID_morador`) REFERENCES `cliente` (`ID_Cliente`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_endereco_cliente` FOREIGN KEY (`ID_morador`) REFERENCES `cliente` (`ID_Cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE `telefone`
-  ADD CONSTRAINT `fk_telefone_cliente`
-  FOREIGN KEY (`ID_dono`) REFERENCES `cliente` (`ID_Cliente`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
+--
+-- Constraints for table `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD CONSTRAINT `fk_funcionario_funcao` FOREIGN KEY (`ID_funcao`) REFERENCES `funcao` (`ID_funcao`) ON UPDATE CASCADE;
 
-ALTER TABLE `email`
-  ADD CONSTRAINT `fk_email_cliente`
-  FOREIGN KEY (`ID_dono`) REFERENCES `cliente` (`ID_Cliente`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE `email`
-  ADD CONSTRAINT `fk_email_funcionario`
-  FOREIGN KEY (`ID_dono`) REFERENCES `funcionario` (`ID_Funcionario`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
-
+--
+-- Constraints for table `pagamento`
+--
 ALTER TABLE `pagamento`
-  ADD CONSTRAINT `fk_pagamento_forma`
-  FOREIGN KEY (`Forma_pagamento`) REFERENCES `formapagamento` (`ID_forma`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_pagamento_forma` FOREIGN KEY (`Forma_pagamento`) REFERENCES `formapagamento` (`ID_forma`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+--
+-- Constraints for table `sala`
+--
 ALTER TABLE `sala`
-  ADD CONSTRAINT `fk_sala_unidade`
-  FOREIGN KEY (`Num_unidade`) REFERENCES `unidade` (`Num_unidade`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_sala_unidade` FOREIGN KEY (`Num_unidade`) REFERENCES `unidade` (`Num_unidade`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+--
+-- Constraints for table `servico`
+--
 ALTER TABLE `servico`
-  ADD CONSTRAINT `fk_servico_sala`
-  FOREIGN KEY (`ID_sala`) REFERENCES `sala` (`ID_sala`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_servico_sala` FOREIGN KEY (`ID_sala`) REFERENCES `sala` (`ID_sala`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-  ALTER TABLE `funcionario`
-    ADD CONSTRAINT `fk_funcionario_funcao`
-    FOREIGN KEY (`ID_funcao`) REFERENCES `funcao` (`ID_funcao`)
-    ON DELETE RESTRICT ON UPDATE CASCADE;
-
-ALTER TABLE `agendamento`
-  ADD CONSTRAINT `fk_agendamento_cliente`
-  FOREIGN KEY (`ID_cliente`) REFERENCES `cliente` (`ID_Cliente`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE `agendamento`
-  ADD CONSTRAINT `fk_agendamento_funcionario`
-  FOREIGN KEY (`ID_Funcionario`) REFERENCES `funcionario` (`ID_Funcionario`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE `agendamento`
-  ADD CONSTRAINT `fk_agendamento_servico`
-  FOREIGN KEY (`ID_servico`) REFERENCES `servico` (`ID_servico`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE `agendamento`
-  ADD CONSTRAINT `fk_agendamento_pagamento`
-  FOREIGN KEY (`ID_pagamento`) REFERENCES `pagamento` (`ID_pagamento`)
-  ON DELETE CASCADE ON UPDATE CASCADE;
+--
+-- Constraints for table `telefone`
+--
+ALTER TABLE `telefone`
+  ADD CONSTRAINT `fk_telefone_cliente` FOREIGN KEY (`ID_dono`) REFERENCES `cliente` (`ID_Cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

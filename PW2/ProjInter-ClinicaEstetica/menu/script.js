@@ -16,7 +16,7 @@ function cadastrar(){
             tit.textContent = "Cadastrar";
             dis.href = "../AcessoBD/cliente/Cadastrar.php";
             cur.href = "../AcessoBD/funcionario/Cadastrar.php";
-            alu.href = "../AcessoBD/alunos/Cadastrar.php";
+            alu.href = "../AcessoBD/servicos/Cadastrar.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
         }, 500);
@@ -56,7 +56,7 @@ function pesquisar(){
             tit.textContent = "Pesquisar";
             dis.href = "../AcessoBD/cliente/Pesquisar.php";
             cur.href = "../AcessoBD/funcionario/Pesquisar.php";
-            alu.href = "../AcessoBD/alunos/Pesquisar.php";
+            alu.href = "../AcessoBD/servicos/Pesquisar.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
         }, 500);
@@ -76,7 +76,7 @@ function listar(){
             tit.textContent = "Listar";
             dis.href = "../AcessoBD/cliente/Listar.php";
             cur.href = "../AcessoBD/funcionario/Listar.php";
-            alu.href = "../AcessoBD/funcionario/Listar.php";
+            alu.href = "../AcessoBD/servicos/Listar.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
         }, 500);
@@ -96,7 +96,7 @@ function alterar(){
             tit.textContent = "Alterar";
             dis.href = "../AcessoBD/cliente/Alterar.php";
             cur.href = "../AcessoBD/funcionario/Alterar.php";
-            alu.href = "../../Aviso/index.htm";
+            alu.href = "../AcessoBD/servicos/Alterar.php";
             form.classList.remove("conteudoh");
             form.classList.add("conteudo");
         }, 500);

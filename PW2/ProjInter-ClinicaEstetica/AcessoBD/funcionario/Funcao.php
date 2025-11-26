@@ -8,7 +8,7 @@
         private $conn;
         
 
-        public function getIduncao() {
+        public function getIdfuncao() {
             return $this->idfuncao;
         }
 
