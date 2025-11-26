@@ -9,9 +9,9 @@
 <body>
     
     <form name="cliente" method="POST" action="" class="form">
-        <h1>Exclusão de Cursos Cadastrados</h1>
+        <h1>Exclusão de Serviços Cadastrados</h1>
         <div class="txts">
-        ID: <br><input name="txtid" type="text" maxlength="2" minlength="2" placeholder="00">
+        ID do Serviço: <br><input name="txtid" type="text" placeholder="ID">
     </div>
         <div class="btns">
             <input name="btnenviar" type="submit" value="Excluir">
@@ -22,9 +22,9 @@
         <?php
             extract($_POST, EXTR_OVERWRITE);
             if(isset($btnenviar)){
-                include_once 'Cursos.php';
-                $p = new Cursos();
-                $p->setCodCurso($txtid);
+                include_once 'Servico.php';
+                $p = new Servico();
+                $p->setIdserv($txtid);
                 echo "<p class='msg'>" . $p->exclusao() . "</p>";
             }
         ?>

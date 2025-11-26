@@ -14,6 +14,10 @@
             $p = new Servico();
             $pro_bd=$p->listar();
         ?>
+        <?php
+            include_once 'Sala.php';
+            $p2 = new Sala();
+        ?>
         <p>Lista da tabela 'servico'<p>
         <table>
             <tr class="cap">
@@ -22,7 +26,7 @@
                 <th>descricao</th>
                 <th>duracao</th>
                 <th>valor</th>
-                <th>ID_sala</th>
+                <th>Num_sala</th>
             </tr>
         <?php
             foreach($pro_bd as $pro_mostrar)
@@ -40,7 +44,7 @@
                 echo "<td> $pro_mostrar[2] </td>";
                 echo "<td> $pro_mostrar[3] </td>"; 
                 echo "<td> R$$pro_mostrar[4] </td>"; 
-                echo "<td> $pro_mostrar[5] </td>"; 
+                echo "<td>".$p2->listar2($pro_mostrar[5])."</td>"; 
                 echo "</tr>";
             }
         ?>

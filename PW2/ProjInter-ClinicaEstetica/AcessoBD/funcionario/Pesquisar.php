@@ -25,7 +25,7 @@
             <th>ID_Funcionario</th>
             <th>Nome</th>
             <th>CPF</th>
-            <th>ID_funcao</th>
+            <th>Funcao</th>
         </tr>
         <?php
             extract($_POST, EXTR_OVERWRITE);
@@ -35,6 +35,8 @@
                 $p = new Funcionario();
                 $p->setNome($txtnome.'%');
                 $pro_bd=$p->consultar();
+                include_once 'Funcao.php';
+                $p2 = new Funcao();
                 foreach($pro_bd as $pro_mostrar){
                     $pos = $pos + 1;
                     if($pos % 2 == 1){
@@ -47,7 +49,7 @@
                     echo "<td> $pro_mostrar[0] </td>"; 
                     echo "<td> $pro_mostrar[1] </td>"; 
                     echo "<td> $pro_mostrar[2] </td>"; 
-                    echo "<td> $pro_mostrar[3] </td>"; 
+                    echo "<td>". $p2->listar2($pro_mostrar[3]) ."</td>"; 
                     echo "</tr>";
                 }
             }

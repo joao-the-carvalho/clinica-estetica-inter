@@ -1,32 +1,3 @@
-table{
-    box-shadow: 0 0 5px black;
-    margin: auto;
-    width: 80vw;
-    border-collapse: collapse;
-    font-size: 1.5vw;
-    opacity: 80%;
-    color: rgb(0, 0, 0);
-    margin-bottom: 4vh;
-}
-th{
-    width: 25%;
-}
-td{
-    padding-left: 3%;
-    text-align: left;
-}
-tr{
-    height: 7vh;
-}
-.cap{
-    background-color: #667f48;
-}
-.par{
-    background-color: rgb(228, 231, 216);
-}
-.impar{
-    background-color: #abb194;
-}
 *{
     padding: 0;
     margin: 0;
@@ -34,15 +5,13 @@ tr{
 body{   
     width: 100vw;
     height: 100vh;   
-    text-align: center;
-    padding-top: 2vh;
-    overflow-x: hidden;
+    display: flex;
 }
 .form{
     margin: auto;
     background-color: #abb194;
-    height: 500px;
-    width: 800px;
+    height: 750px;
+    width: 500px;
     border-radius: 30px;
     border-color: #667f48;
     border-width: 3px;
@@ -55,18 +24,18 @@ body{
 h1{
     margin-top: 5%;
     margin-bottom: 10%;
-    font-size: 35pt;
+    font-size: 40pt;
     text-align: center;
 }
 .txts{
-    margin-left: 5%;   
+    margin-left: 10%;   
+    margin-bottom: 5%;
     font-size: 20pt;
-    text-align: left;
 }
 .txts input{
-    width: 90%;
+    width: 80%;
     height: 40px;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
     padding-left: 2%;
     border-radius: 5pt;
     border-color: #667f48;
@@ -76,6 +45,15 @@ h1{
     font-size: 18pt;
     text-shadow: #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px,
              #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px;
+}
+.txts select{
+    background-color: rgb(228, 231, 216);
+    border-color: #667f48;
+    width: 30%;
+    height: 30px;
+}
+.txts select:hover{
+    cursor: pointer;
 }
 .btns{
     width: 100%;
@@ -99,10 +77,15 @@ h1{
     background-color: #89aa61;
     cursor: pointer;
 }
+.msg{
+    text-align: center;
+}
 .fundo{
     position: fixed;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
     width: 100vw;
     height: 100vh;
     background-image: url('../../../img/clientesfundo.jpeg');
@@ -111,26 +94,9 @@ h1{
     z-index: -1;
     opacity: 40%;
 }
-@media(max-width: 100vh){
-    p, table{
-        font-size: 150%;
-    }
-}
-@media(max-width: 800px){
-    .form{
-        width: 90vw;
-        height: auto;
-    }
-    .btns{
-        display: inline-block;
-    }
-    .btns input{
-        margin-bottom: 2vh;
-    }
-    h1{
-        font-size: 30pt;
-    }
-    body{
-        overflow-x: visible;
-    }
+
+.id{
+    margin-left: 10%;
+    margin-bottom: 4%;
+    font-size: 20pt;
 }

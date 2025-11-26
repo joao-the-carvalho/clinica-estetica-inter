@@ -39,5 +39,22 @@
                 echo "Erro ao executar consulta. " . $exc->getMessage();
             }
         }
+
+        function listar2($idfun)
+        {
+            try
+            {
+                $this->conn = new Conectar();
+                $sql = $this->conn->query("select * from funcao where id_funcao = $idfun");
+                $sql->execute();
+                $result = $sql->fetchColumn(1);
+                return $result;
+                $this->conn = null;
+            }
+            catch(PDOException $exc)
+            {
+                echo "Erro ao executar consulta. " . $exc->getMessage();
+            }
+        }
     }
 ?>

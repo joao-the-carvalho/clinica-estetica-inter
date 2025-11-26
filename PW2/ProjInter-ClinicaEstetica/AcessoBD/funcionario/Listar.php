@@ -14,13 +14,17 @@
             $p = new Funcionario();
             $pro_bd=$p->listar();
         ?>
+        <?php
+            include_once 'Funcao.php';
+            $p2 = new Funcao();
+        ?>
         <p>Lista da tabela 'funcionario'<p>
         <table>
             <tr class="cap">
                 <th>ID_Funcionario</th>
                 <th>Nome</th>
                 <th>CPF</th>
-                <th>ID_Funcao</th>
+                <th>Funcao</th>
             </tr>
         <?php
             foreach($pro_bd as $pro_mostrar)
@@ -36,7 +40,7 @@
                 echo "<td> $pro_mostrar[0] </td>"; 
                 echo "<td> $pro_mostrar[1] </td>"; 
                 echo "<td> $pro_mostrar[2] </td>";
-                echo "<td> $pro_mostrar[3] </td>"; 
+                echo "<td>".$p2->listar2($pro_mostrar[3])."</td>"; 
                 echo "</tr>";
             }
         ?>

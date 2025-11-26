@@ -130,4 +130,7 @@ h1{
     h1{
         font-size: 30pt;
     }
+    body{
+        overflow-x: visible;
+    }
 }

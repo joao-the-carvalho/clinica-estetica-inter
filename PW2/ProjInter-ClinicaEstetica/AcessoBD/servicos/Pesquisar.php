@@ -8,10 +8,10 @@
 </head>
 <body>    
     <form name="cliente" method="POST" action="" class="form">
-        <h1>Consulta de Cursos Cadastrados</h1>
+        <h1>Consulta de Serviços Cadastrados</h1>
         <div class="txts">
-            Nome:<br>
-            <input name="txtnome" type="text" size="40" maxlength="40" placeholder="Nome do Curso">
+            Nome do Serviço:<br>
+            <input name="txtnome" type="text" size="40" maxlength="40" placeholder="Nome">
         </div>
         <div class="btns">
             <input name="btnenviar" type="submit" value="Consultar"><br>
@@ -22,20 +22,23 @@
     <br>
     <table>
         <tr class="cap">
-            <th>CodCurso</th>
-            <th>Nome</th>
-            <th>CodDisc1</th>
-            <th>CodDisc2</th>
-            <th>CodDisc3</th>
+            <th>ID_servico</th>
+            <th>Nome_servico</th>
+            <th>descricao</th>
+            <th>duracao</th>
+            <th>valor</th>
+            <th>Num_sala</th>
         </tr>
         <?php
             extract($_POST, EXTR_OVERWRITE);
             if(isset($btnenviar)){
                 $pos = 0;
-                include_once 'Cursos.php';
-                $p = new Cursos();
+                include_once 'Servico.php';
+                $p = new Servico();
                 $p->setNome($txtnome.'%');
                 $pro_bd=$p->consultar();
+                include_once 'Sala.php';
+                $p2 = new Sala();
                 foreach($pro_bd as $pro_mostrar){
                     $pos = $pos + 1;
                     if($pos % 2 == 1){
@@ -50,6 +53,7 @@
                     echo "<td> $pro_mostrar[2] </td>"; 
                     echo "<td> $pro_mostrar[3] </td>"; 
                     echo "<td> $pro_mostrar[4] </td>"; 
+                    echo "<td>".$p2->listar2($pro_mostrar[5])."</td>"; 
                     echo "</tr>";
                 }
             }
