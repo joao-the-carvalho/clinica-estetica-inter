@@ -44,5 +44,6 @@
             }
         ?>   
     </form>  
+    <footer><a class="autor" href="../Contate-nos/index.htm">Contate-nos</a></footer>
 </body>
 </html>

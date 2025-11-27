@@ -57,3 +57,16 @@ body{
     background-color: rgb(196, 208, 219);
     cursor: pointer;
 }
+footer{
+    height: 6vh;
+    width: 100%;
+    background-color: aquamarine;
+    position: fixed;
+    box-shadow: 0 0 3px;
+    bottom: 0;
+    display: flex;
+}
+.autor{
+    margin: auto;
+    font-size: 1vw;
+}

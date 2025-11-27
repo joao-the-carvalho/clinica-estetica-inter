@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+body{
+    overflow: hidden;
+}
+
+header{
+    text-align: center;
+    height: 5vh;
+    background-color: gray;
+    padding-top: 10px;
+    font-size: 50pt;
+    font-weight: bold;
+    text-shadow: #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px,
+             #000 0px 0px 2px,   #000 0px 0px 2px,   #000 0px 0px 2px;
+}
+main{
+    display: flex;
+    height: 100vh;
+    background-color: gray;
+}
+.card{
+    height: 600px;
+    width: 375px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 30px;
+    margin: auto;
+    box-shadow: 0 0 5px black;
+}
+.pfpCesar{
+    height: 125px;
+    width: 125px;
+    background: url(../img/CesarFoto.jpg);
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 100px;
+}
+
+.pfpJoao{
+    height: 125px;
+    width: 125px;
+    background: url(../img/JoaoFoto.jpg);
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 100px;
+}
+
+.pfpGiovanna{
+    height: 125px;
+    width: 125px;
+    background: cyan;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 100px;
+}
+
+.topo{
+    text-align: center;
+    height: 40%;
+}
+.topo p{
+    font-size: 30pt;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.lista{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 15pt;
+    height: 60%;
+}
+.lista li{
+    margin-top: 30px;
+}
+
+ul li:nth-child(1) {
+  list-style-image: url('../img/telefone.png');
+  list-style-type: square;  
+}
+
+ul li:nth-child(2) {
+  list-style-image: url('../img/email.png');
+  list-style-type: square;  
+}
+
+ul li:nth-child(3) {
+  list-style-image: url('../img/github.png');
+  list-style-type: square;  
+}
+
+
+
+footer{
+    height: 6vh;
+    width: 100%;
+    background-color: rgb(59, 59, 59);
+    position: fixed;
+    box-shadow: 0 0 3px;
+    bottom: 0;
+    display: flex;
+}
+.autor{
+    margin: auto;
+    font-size: 12pt;
+}
+
+@media (max-width: 1100px){
+    body{
+        overflow: visible;
+    }
+    header{
+        height: auto;
+        padding-bottom: 40px;
+    }
+    main{
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 10vh;
+    }
+    .card{
+        margin-bottom: 30px;
+    }
+}
+@media(max-height: 800px){
+    body{
+        overflow: visible;
+    }
+    main{
+        padding-bottom: 10vh;
+    }
+}
+
+
+@media(max-height: 700px){
+    header{
+        height: auto;
+        padding-bottom: 40px;
+    }
+}
