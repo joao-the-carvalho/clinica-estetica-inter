@@ -29,6 +29,11 @@ main{
     border-radius: 30px;
     margin: auto;
     box-shadow: 0 0 5px black;
+    transition: 0.25s ease-in-out;
+}
+.card:hover{
+    transform: scale(110%);
+    transition: 0.25s ease-in-out;
 }
 .pfpCesar{
     height: 125px;
@@ -42,7 +47,7 @@ main{
 .pfpJoao{
     height: 125px;
     width: 125px;
-    background: url(../img/JoaoFoto.jpg);
+    background: url(../img/JoaoFoto.jpeg);
     margin: auto;
     margin-top: 20px;
     border-radius: 100px;
@@ -51,7 +56,7 @@ main{
 .pfpGiovanna{
     height: 125px;
     width: 125px;
-    background: cyan;
+    background: url(../img/GiovannaFoto.png);
     margin: auto;
     margin-top: 20px;
     border-radius: 100px;
@@ -121,7 +126,7 @@ footer{
         padding-bottom: 10vh;
     }
     .card{
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 }
 @media(max-height: 800px){
